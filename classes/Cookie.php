@@ -74,7 +74,7 @@ class Cookie {
 		// Does the session cookie exist?
 		if (isset($_COOKIE[$name])) {
 
-			unset($_COOKIE[$name]);					// Clear cookie values.
+			unset($_COOKIE[$name]);			// Clear cookie values.
 			setcookie($name, '', time() -1, '/');	// Remove the cookie.
 
 		}

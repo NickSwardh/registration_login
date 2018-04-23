@@ -12,9 +12,9 @@ class Member {
 
 	// Class members.
 	private $conn 		= null,
-			$result 	= null,
-			$rowCount 	= 0,
-			$lastId 	= null;
+		$result 	= null,
+		$rowCount 	= 0,
+		$lastId 	= null;
 
 
 
@@ -46,7 +46,7 @@ class Member {
 
 		// ...it's a string...
 		} else {
-			$assemble->bindValue(1, $param);				// Bind it.
+			$assemble->bindValue(1, $param);			// Bind it.
 		}
 
 		// All good, return prepared and bound query-object.
@@ -66,10 +66,10 @@ class Member {
 		if ($this->Execute($result)) {
 
 			$this->result 		= $result->fetchAll(PDO::FETCH_OBJ);	// Fetch the result as an object.
-			$this->rowCount 	= $result->rowCount();					// Get number of rows.
+			$this->rowCount 	= $result->rowCount();			// Get number of rows.
 
 		} else {
-			$this->Error($result->errorInfo()[2]);						// Oops, something went wrong...
+			$this->Error($result->errorInfo()[2]);				// Oops, something went wrong...
 		}
 
 		// Glory to the Gods! Raise your horns, Skål!
@@ -149,7 +149,7 @@ class Member {
 		// Call PrepareQuery() and pass in the $query along with $data for binding.
 		$result = $this->PrepareQuery($query, $data);
 
-		$this->Execute($result);						// Execute query!
+		$this->Execute($result);			// Execute query!
 		$this->lastId = $this->conn->lastInsertId();	// Get the last inserted ID from the connection-object.
 
 		return true;
@@ -169,12 +169,12 @@ class Member {
 			$column	.= $key . '=?, ';
 		}
 
-		$data[] = $id;												// Add $id as the last index.
-		$column = trim($column, ', ');								// Remove the ', ' from the end.
+		$data[] = $id;							// Add $id as the last index.
+		$column = trim($column, ', ');					// Remove the ', ' from the end.
 		$query 	= "UPDATE {$table} SET {$column} WHERE {$where}=?";	// Construct the query.
 
-		$result = $this->PrepareQuery($query, $data);				// Call PrepareQuery().
-		$this->Execute($result); 									// Execute query!
+		$result = $this->PrepareQuery($query, $data);			// Call PrepareQuery().
+		$this->Execute($result); 					// Execute query!
 
 		return true;
 	}

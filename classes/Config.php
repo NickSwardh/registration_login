@@ -16,7 +16,6 @@ class Config {
 
 
 	// Get and return the requested credentials.
-	////////////////////////////////////////////////////////////////////////
 	public static function Get($config) {
 
 		// Get the cridentials from the static helper-method LoadIni().
@@ -35,7 +34,6 @@ class Config {
 
 	// Helper-method to load and parse `config.ini`.
 	// This method makes sure the ini file only loads once.
-	////////////////////////////////////////////////////////////////////////
 	private static function LoadIni() {
 
 		// If `self::$ini` is not set...
@@ -46,8 +44,8 @@ class Config {
 
 		}
 
-			// return the parsed `config.ini` file.
-			return self::$credentials;
+		// return the parsed `config.ini` file.
+		return self::$credentials;
 
 	}
 	

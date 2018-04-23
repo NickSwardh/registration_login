@@ -19,8 +19,8 @@ if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 
 $email = trim(Sanitize('email'));
 
-$validate = new Validate();		// Instantiate a new Validate-object.
-$validate->Email($email);		// Validate the submited form and gather error info.
+$validate = new Validate();	// Instantiate a new Validate-object.
+$validate->Email($email);	// Validate the submited form and gather error info.
 $error = $validate->Error();	// Collect errors, if any.
 
 	// If there are no errors and the email is not the current email...
@@ -32,8 +32,8 @@ $error = $validate->Error();	// Collect errors, if any.
 			// Nothing found? Good, the new e-mail can be registered.
 			if(!$validate->Count()) {
 
-				$data = array('email' => $email);						// Prepare an array with all user data.
-				$user->Update('members', $data, 'id', $user->ID());		// Update the database with the new password.
+				$data = array('email' => $email);			// Prepare an array with all user data.
+				$user->Update('members', $data, 'id', $user->ID());	// Update the database with the new password.
 
 				// Destroy the xsfr-cookies.
 				Cookie::Crush($xsfr_cookie);

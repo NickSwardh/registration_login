@@ -73,7 +73,7 @@ if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 			$link 		= 'https://www.nswardh.com/demo/login/newpass.php?id=' . $email . '&token=' . $token;
 
 			// Subject and message.
-			$subject	= 'Reset Your Demo Password - nswardh.com';
+			$subject	= 'Reset Your Password';
 			$message	= '<html><head><title>nswardh.com - Reset Password</title>
 					   <head>
 					   <body>

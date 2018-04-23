@@ -42,7 +42,7 @@ class Member {
 
 			// Iterate through $param.
 			for($i = 1; $i <= $count; $i++) 
-				$assemble->bindValue($i, $param[$i - 1]); 	// Bind each $parame to its ?-placeholder.
+				$assemble->bindValue($i, $param[$i - 1]); 	// Bind each $param to its ?-placeholder.
 
 		// ...it's a string...
 		} else {

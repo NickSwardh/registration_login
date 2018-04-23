@@ -5,7 +5,7 @@ require_once('init/init.php');
 
 
 $xsfr_cookie 	= Config::Get('xsfr/cookie'); 	// Get Cross-Site-Forgery-Request cookie-name from config.
-$error 			= null;							// Variable for holding error messsages.
+$error 		= null;				// Variable for holding error messsages.
 
 if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 
@@ -49,9 +49,9 @@ if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 
 				// Prepare an array with all user data.
 				$data = array( 	
-								'token' 	=> $token_hash,
-								'expire' 	=> $expire
-							);
+						'token' 	=> $token_hash,
+						'expire' 	=> $expire
+					);
 
 				// Update with new a new has and a new expiraration time.
 				$validate->Update('resetpass', $data, 'user_id', $user_id);
@@ -60,10 +60,10 @@ if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 
 				// Prepare an array with all user data.
 				$data = array( 	
-								'user_id' 	=> $user_id,
-								'token' 	=> $token_hash,
-								'expire' 	=> $expire
-							);
+						'user_id' 	=> $user_id,
+						'token' 	=> $token_hash,
+						'expire' 	=> $expire
+					);
 
 				// Insert a new token.
 				$validate->Insert('resetpass', $data);
@@ -75,13 +75,13 @@ if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 			// Subject and message.
 			$subject	= 'Reset Your Demo Password - nswardh.com';
 			$message	= '<html><head><title>nswardh.com - Reset Password</title>
-							<head>
-							<body>
-							<h1>Reset Password</h1>
-							<p>To reset your password, please click the link below and follow the instructions. The link will expire in ' . $minutes . ' minutes.</p>
-							<a href="' . $link . '">' . $link . '</a>
-							</body>
-							</html>';
+					   <head>
+					   <body>
+					   <h1>Reset Password</h1>
+					   <p>To reset your password, please click the link below and follow the instructions. The link will expire in ' . $minutes . ' minutes.</p>
+					   <a href="' . $link . '">' . $link . '</a>
+					   </body>
+					   </html>';
 
 			// Send mail with the instructions to the users e-mail account!
 			if (SendMail($email, $memberName, $subject, $message)) {

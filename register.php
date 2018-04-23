@@ -4,7 +4,7 @@
 require_once("init/init.php");
 
 
-// Get Cross-Site-Forgery-Request cookie-name from config.
+// Get Cross-Site-Forgery-Request cookie-name from config. 
 $xsfr_cookie = Config::Get('xsfr/cookie');
 
 

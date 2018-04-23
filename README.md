@@ -6,10 +6,10 @@ https://www.nswardh.com/demo/login/
 NOTE: The live demo has been styled and pimped using HTML and CSS, other than that, its all the same and use the same files and objects as you find here.
 
 # Features
-)Forgot/Reset password
-)Remember-me
-)Update profile
-)Update username (e-mail address)
+1) Forgot/Reset password
+2) Remember-me
+3) Update profile
+4) Update username (e-mail address)
 
 Live demo: https://www.nswardh.com/demo/login/
 

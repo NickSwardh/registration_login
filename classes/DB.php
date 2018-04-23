@@ -12,13 +12,13 @@ class DB {
 	
 
 
-	// Classmembers
-	private static $conn = null;
-	private $pdo 		 = null;
+	// Class members
+	private static $conn 	= null;
+	private $pdo 		= null;
 
 
 
-	//	Constructor
+	// Constructor
 	private function __construct() {
 
 		try {

@@ -1,4 +1,4 @@
-# registration_login
+# Registration & Login - PHP & OOP
 
 This is a Registration & Login application made in PHP and OOP. A live demo of this webapplication can be found here:
 https://www.nswardh.com/demo/login/

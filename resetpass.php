@@ -53,7 +53,7 @@ if (isset($_POST['submit']) && Cookie::Auth($xsfr_cookie)) {
 						'expire' 	=> $expire
 					);
 
-				// Update with new a new has and a new expiraration time.
+				// Update expiration time.
 				$validate->Update('resetpass', $data, 'user_id', $user_id);
 
 			} else {
